@@ -1,0 +1,54 @@
+Coursera Capstone Project
+========================================================
+author: Manuel MB
+date: 24 de marzo de 2017
+transition: rotate
+font-family: 'Calibri'
+
+# **Next word prediction**
+## *Final Project. @mmblanes*
+
+
+Objetives
+========================================================
+In this step of the course, an n-gram model has been built to predicting the next word from the previous words.
+
+The main goal of this project was to design and implement a model that would take a partial phrase as an input, and try and predict the next word in the phrase.
+
+An app was designed using RStudio and Shiny Apps to serve as the user interface for this project.
+
+To develop the model, a corpus of three text examples was provided with examples from twitter, news, and blogs from HC Corpora
+
+
+Applied methods
+========================================================
+##### After a corpus generated, then clean up processes performed.  
+  
+  * It considers the last four words of the text input.
+  * Convert all words to lowercase
+  * Remove URL and special characters
+  * Eliminate numbers, punctuation, dashs and apostroples
+  * Strip whitespace; Trim leading and trailing whitespace
+
+##### This sampled corpus was then used to creat Bigram, Trigram and Quadgram  
+
+Model and predictive Performance 
+========================================================
+To predict the next word in a phrase, a simplified interpolation and Back-off model was developed.
+
+The partial phrase input by the user would be used to search the n-gram tables. If a phrase was not found in the table then the model would "back-off" to the next lowest n-gram and search for a shortened phrase.
+
+The app relies on Markov Chains and only uses a maximum of four words to make a prediction.
+
+Shiny application
+========================================================
+left: 50%
+
+![Screenshot](screenMB.png)
+***
+- Shiny dashboard is used for navigation. 
+- Easy to use for mobile devices. 
+- While entering the text, the predicted next word will be shown instantaneously.
+- And how many words and characters the user just has entered will be displayed too.
+
+The link to de app is [Link](https://cjmf.shinyapps.io/guess_next_word/)
